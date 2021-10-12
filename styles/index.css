@@ -154,3 +154,6 @@ body {
 .rotate90 {
   transform: rotate(90deg);
 }
+.circle {
+  border-radius: 50%;
+}

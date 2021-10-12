@@ -31,25 +31,25 @@ const data = [
   },
 ];
 
-const MapData = () => {
-  return data.map(({ articleTitle, articleCategory, imgSrc, imgAlt }) => {
-    return (
-      <FourFourFour>
-        <ArticleCard
-          articleTitle={articleTitle}
-          articleCategory={articleCategory}
-          imgSrc={imgSrc}
-          imgAlt={imgAlt}
-        />
-      </FourFourFour>
-    );
-  });
-};
-
-export const PopularArticles = () => {
+export const PopularArticles = ({ blog, sectionHeading }) => {
+  console.log(blog);
+  const MapData = () => {
+    return blog.map(() => {
+      return (
+        <FourFourFour>
+          <ArticleCard
+            articleTitle={blog.fields}
+            articleCategory={"Bærekraftig mat"}
+            imgSrc={blog.fields.hovedbilde.fields.file.url.slice(36)}
+            imgAlt={fields.hovedbilde.fields.description}
+          />
+        </FourFourFour>
+      );
+    });
+  };
   return (
     <section id="populære artikler">
-      <h2 className="mb-56 text-h2 lg:text-h1">Populære artikler</h2>
+      <h2 className="mb-56 text-h2 lg:text-h1">{sectionHeading}</h2>
       <Grid c="mb-56">
         <MapData />
       </Grid>

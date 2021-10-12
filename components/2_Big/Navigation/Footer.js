@@ -7,7 +7,7 @@ export const Footer = () => {
       <Layout>
         <Grid>
           <FourFourFour c="mb-32 mb:mb-0">
-            <h2 className="text-body_regular text-neutral_300 mb-24">
+            <h2 className="text-body_regular text-neutral_700 mb-24">
               Renate Rue
             </h2>
             <div className="flex flex-col">
@@ -34,7 +34,7 @@ export const Footer = () => {
             </div>
           </FourFourFour>
           <TwoTwoTwo c="md:col-start-6 lg:col-start-10">
-            <h2 className="text-body_regular text-neutral_300 mb-24">
+            <h2 className="text-body_regular text-neutral_700 mb-24">
               Kategorier
             </h2>
             <div className="flex flex-col">

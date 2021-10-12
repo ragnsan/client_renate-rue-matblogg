@@ -50,6 +50,7 @@ module.exports = {
       teal: "#A6EDF0",
       green: "#C6EBC9",
       yellow: "#FFDF9B",
+      red: "#B9455C",
     },
     //
     // TODO  Set box shadow settings if the project has them. If not, delete line 31-33

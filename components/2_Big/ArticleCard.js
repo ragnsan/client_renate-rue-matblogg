@@ -17,6 +17,7 @@ export const ArticleCard = ({
         <Image
           src={imgSrc}
           alt={imgAlt}
+          loader={loader}
           layout="fill"
           className="object-cover rounded-rund"
         />

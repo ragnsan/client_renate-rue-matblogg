@@ -8,7 +8,48 @@ import { HomeHero } from "../components/3_Pages/0_Home/0_HomeHero.js";
 import { PopularArticles } from "../components/3_Pages/0_Home/1_PopularArticles";
 import { ArticleCategories } from "../components/3_Pages/0_Home/2_ArticleCategories";
 
-export default function Home() {
+let client = require("contentful").createClient({
+  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticPaths() {
+  let data = await client.getEntries({
+    content_type: "brekraftigMat",
+  });
+  return {
+    paths: data.items.map((item) => ({
+      params: { slug: item.fields.slug },
+    })),
+    fallback: true,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  let data = await client.getEntries({
+    content_type: "brekraftigMat",
+    // content_type: "hverdagsmat",
+    // content_type: "matForBarn",
+    "fields.slug": params.slug,
+  });
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  } else {
+    return {
+      props: {
+        blog: data.items[0].fields,
+      },
+      revalidate: 60,
+    };
+  }
+}
+
+export default function Home({ blog }) {
   return (
     <>
       <NextSeo
@@ -35,7 +76,7 @@ export default function Home() {
       <Navbar />
       <HomeHero />
       <Layout>
-        <PopularArticles />
+        <PopularArticles blog={blog} />
         <ArticleCategories />
       </Layout>
       <Footer />
