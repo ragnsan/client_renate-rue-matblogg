@@ -4,20 +4,20 @@ module.exports = {
     fontSize: {
       //
       // TODO Remember to set the correct size and line height. Look at the design!
-      display: ["49px", { lineHeight: "73px" }],
-      h1: ["39px", { lineHeight: "48px" }],
-      h2: ["31px", { lineHeight: "48px" }],
-      h3: ["25px", { lineHeight: "40px" }],
+      display: ["60px", { lineHeight: "64px" }],
+      h1: ["48px", { lineHeight: "56px" }],
+      h2: ["34px", { lineHeight: "40px" }],
+      h3: ["22px", { lineHeight: "32px" }],
       h4: ["20px", { lineHeight: "40px" }],
-      p: ["16px", { lineHeight: "32px" }],
-      medium: ["14px", { lineHeight: "" }],
+      body_regular: ["16px", { lineHeight: "32px" }],
+      body_small: ["14px", { lineHeight: "" }],
       small: ["10px", { lineHeight: "10px" }],
     },
     //
     // TODO Set the font families according to the design spec. For example:
     // sans: ["Poppins", "sans-serif"], for example
     fontFamily: {
-      sans: [],
+      sans: ["Open Sans", "sans-serif"],
     },
     //
     // TODO Configure the colors that do not have a hexcode already. Add all colors from the "color palette" section in the design
@@ -46,17 +46,21 @@ module.exports = {
       white_90: "#FCFCFC",
       white_25: "#ECECEC",
       black: "#000000",
+      pink: "#F5C6D7",
+      teal: "#A6EDF0",
+      green: "#C6EBC9",
+      yellow: "#FFDF9B",
     },
     //
     // TODO  Set box shadow settings if the project has them. If not, delete line 31-33
     boxShadow: {
-      shadow: "0px 8px 24px rgba(0, 0, 0, 0.15)",
+      shadow: "0px 8px 24px rgba(24, 84, 98, 0.2)",
     },
     // Note to self. Fjerna extend her. Så hvis det ikke funker, legg det tilbake.
     // TODO Set the border radius for buttons
     borderRadius: {
       circle: "9999px",
-      rund: "",
+      rund: "20px",
     },
     //
     //

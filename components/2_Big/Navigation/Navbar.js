@@ -7,7 +7,7 @@ export const Navbar = () => {
       <nav className="lg:hidden bg-white shadow-shadow">
         <Mobilenav />
       </nav>
-      <nav className="hidden lg:flex bg-white shadow-shadow">
+      <nav className="hidden lg:flex bg-yellow border-b border-1 border-neutral_700">
         <Desktopnav />
       </nav>
     </>

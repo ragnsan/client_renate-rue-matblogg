@@ -102,6 +102,10 @@ export const Layout = ({ children, c }) => {
     </div>
   );
 };
+export const Box = ({ children, c }) => {
+  return <div className={`rounded-rund ${c}`}>{children}</div>;
+};
+
 //
 //
 // * Grid related items
