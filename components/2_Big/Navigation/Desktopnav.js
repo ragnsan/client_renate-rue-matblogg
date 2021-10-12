@@ -16,16 +16,16 @@ export const Desktopnav = () => {
           <Link href="/">
             <a className="mb-0 ">Hjem</a>
           </Link>
-          <Link href="/meny">
+          <Link href="/baerekraftig-mat">
             <a className="ml-32 mb-0 ">Bærekraftig mat</a>
           </Link>
-          <Link href="/om-oss">
+          <Link href="/hverdagsmat">
             <a className="ml-32 mb-0 ">Hverdagsmat</a>
           </Link>
-          <Link href="/kontakt">
+          <Link href="/mat-for-barn">
             <a className="ml-32 mb-0 ">Mat for barn</a>
           </Link>
-          <Link href="/kontakt">
+          <Link href="/om-renate">
             <a className="ml-32 mb-0 ">Om Renate</a>
           </Link>
         </div>

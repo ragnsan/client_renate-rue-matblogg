@@ -2,13 +2,21 @@ import { FourFourFour, Grid } from "../../1_Small/Base";
 import Link from "next/link";
 
 const data = [
-  { categoryName: "Bærekraftig mat", bgColor: "green", categoryHref: "" },
-  { categoryName: "Hverdagsmat", bgColor: "pink", categoryHref: "" },
-  { categoryName: "Mat for barn", bgColor: "teal", categoryHref: "" },
+  {
+    categoryName: "Bærekraftig mat",
+    bgColor: "green",
+    categoryHref: "baerekraftig-mat",
+  },
+  { categoryName: "Hverdagsmat", bgColor: "pink", categoryHref: "hverdagsmat" },
+  {
+    categoryName: "Mat for barn",
+    bgColor: "teal",
+    categoryHref: "mat-for-barn",
+  },
 ];
 
 const MapData = () => {
-  return data.map(({ categoryName, categoryHref, bgColor }) => {
+  return data.map(({ categoryName, categoryHref }) => {
     return (
       <FourFourFour>
         <Link href={categoryHref} className>

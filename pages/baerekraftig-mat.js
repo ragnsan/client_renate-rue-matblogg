@@ -10,12 +10,9 @@ let client = require("contentful").createClient({
   accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   let data = await client.getEntries({
     content_type: "brekraftigMat",
-    // content_type: "hverdagsmat",
-    // content_type: "matForBarn",
-    // "fields.slug": params.slug,
   });
   if (!data) {
     return {
@@ -35,14 +32,15 @@ export async function getStaticProps({ params }) {
 }
 
 export default function baerekraftigMat({ blog }) {
-  console.log(blog);
   return (
-    <>
+    <section className="min-h-100">
       <Navbar />
-      <Layout>
-        <PopularArticles blog={blog} heading="Bærekraftig mat" />
-      </Layout>
+      <div className="" style={{ background: "#C6EBC9" }}>
+        <Layout>
+          <PopularArticles blog={blog} sectionHeading="Bærekraftig mat" />
+        </Layout>
+      </div>
       <Footer />
-    </>
+    </section>
   );
 }

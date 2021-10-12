@@ -38,15 +38,15 @@ export const Footer = () => {
               Kategorier
             </h2>
             <div className="flex flex-col">
-              <Link href="">
+              <Link href="baerekraftig-mat">
                 <a className="underline text-neutral_700 mb-8">
                   Bærekraftig mat
                 </a>
               </Link>
-              <Link href="">
+              <Link href="hverdagsmat">
                 <a className="underline text-neutral_700 mb-8">Hverdagsmat</a>
               </Link>
-              <Link href="">
+              <Link href="mat-for-barn">
                 <a className="underline text-neutral_700 mb-8">Mat for barn</a>
               </Link>
             </div>

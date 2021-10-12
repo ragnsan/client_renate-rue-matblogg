@@ -13,24 +13,24 @@ let client = require("contentful").createClient({
   accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function getStaticPaths() {
-  let data = await client.getEntries({
-    content_type: "brekraftigMat",
-  });
-  return {
-    paths: data.items.map((item) => ({
-      params: { slug: item.fields.slug },
-    })),
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   let data = await client.getEntries({
+//     content_type: "brekraftigMat",
+//   });
+//   return {
+//     paths: data.items.map((item) => ({
+//       params: { slug: item.fields.slug },
+//     })),
+//     fallback: true,
+//   };
+// }
 
 export async function getStaticProps({ params }) {
   let data = await client.getEntries({
     content_type: "brekraftigMat",
     // content_type: "hverdagsmat",
     // content_type: "matForBarn",
-    "fields.slug": params.slug,
+    // "fields.slug": params.slug,
   });
   if (!data) {
     return {
@@ -42,7 +42,7 @@ export async function getStaticProps({ params }) {
   } else {
     return {
       props: {
-        blog: data.items[0].fields,
+        blog: data.items,
       },
       revalidate: 60,
     };
@@ -76,8 +76,8 @@ export default function Home({ blog }) {
       <Navbar />
       <HomeHero />
       <Layout>
-        <PopularArticles blog={blog} />
-        <ArticleCategories />
+        <PopularArticles blog={blog} sectionHeading="Populære artikler" />
+        <ArticleCategories blog={blog} />
       </Layout>
       <Footer />
     </>
