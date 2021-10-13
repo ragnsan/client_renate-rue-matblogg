@@ -2,6 +2,10 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/hverdagsmat/[slug]": "pages/hverdagsmat/[slug].js",
+  "/baerekraftig-mat": "pages/baerekraftig-mat.js",
+  "/mat-for-barn": "pages/mat-for-barn.js",
   "/": "pages/index.js",
-  "/[slug]": "pages/[slug].js"
+  "/om-renate": "pages/om-renate.js",
+  "/hverdagsmat": "pages/hverdagsmat.js"
 }

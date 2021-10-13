@@ -46,8 +46,6 @@ export default function omRenate({ seksjon1, seksjon2 }) {
   if (!seksjon1 || !seksjon2) {
     return <div>{RedirectPage()}</div>;
   }
-  console.log(seksjon1);
-  console.log(seksjon2);
   return (
     <>
       <Navbar />

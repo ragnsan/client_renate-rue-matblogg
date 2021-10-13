@@ -1,17 +1,53 @@
 import { FourFourFour, Grid } from "../../1_Small/Base";
 import { ArticleCard } from "../../2_Big/ArticleCard";
 
-export const PopularArticles = ({ blog, sectionHeading }) => {
-  const MapData = () => {
-    return blog.map((blog) => {
+export const PopularArticles = ({
+  brekraftigMat,
+  hverdagsmat,
+  matForBarn,
+  sectionHeading,
+}) => {
+  const MapBrekraftigMat = () => {
+    return brekraftigMat.map((brekraftigMat) => {
       return (
         <FourFourFour c="">
           <ArticleCard
-            aricleHref={`/${blog.fields.slug}`}
-            articleTitle={blog.fields.overskrift}
+            id={brekraftigMat.fields.slug}
+            aricleHref={`baerekraftig-mat/${brekraftigMat.fields.slug}`}
+            articleTitle={brekraftigMat.fields.overskrift}
             articleCategory={"Bærekraftig mat"}
-            imgSrc={blog.fields.hovedbilde.fields.file.url.slice(36)}
-            imgAlt={blog.fields.hovedbilde.fields.description}
+            imgSrc={brekraftigMat.fields.hovedbilde.fields.file.url.slice(36)}
+            imgAlt={brekraftigMat.fields.hovedbilde.fields.description}
+          />
+        </FourFourFour>
+      );
+    });
+  };
+  const MapHverdagsmat = () => {
+    return hverdagsmat.map((hverdagsmat) => {
+      return (
+        <FourFourFour c="" id={hverdagsmat.sys.id}>
+          <ArticleCard
+            aricleHref={`hverdagsmat/${hverdagsmat.fields.slug}`}
+            articleTitle={hverdagsmat.fields.overskrift}
+            articleCategory={"Hverdagsmat"}
+            imgSrc={hverdagsmat.fields.hovedbilde.fields.file.url.slice(36)}
+            imgAlt={hverdagsmat.fields.hovedbilde.fields.description}
+          />
+        </FourFourFour>
+      );
+    });
+  };
+  const MapMatForBarn = () => {
+    return matForBarn.map((matForBarn) => {
+      return (
+        <FourFourFour c="" id={matForBarn.sys.id}>
+          <ArticleCard
+            aricleHref={`mat-for-barn/${matForBarn.fields.slug}`}
+            articleTitle={matForBarn.fields.overskrift}
+            articleCategory={"Mat for barn"}
+            imgSrc={matForBarn.fields.hovedbilde.fields.file.url.slice(36)}
+            imgAlt={matForBarn.fields.hovedbilde.fields.description}
           />
         </FourFourFour>
       );
@@ -23,7 +59,9 @@ export const PopularArticles = ({ blog, sectionHeading }) => {
         {sectionHeading}
       </h2>
       <Grid c="pb-56">
-        <MapData />
+        {brekraftigMat != null ? <MapBrekraftigMat /> : <></>}
+        {hverdagsmat != null ? <MapHverdagsmat /> : <></>}
+        {matForBarn != null ? <MapMatForBarn /> : <></>}
       </Grid>
     </section>
   );

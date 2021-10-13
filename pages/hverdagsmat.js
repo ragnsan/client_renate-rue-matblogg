@@ -3,6 +3,7 @@ import { Layout } from "../components/1_Small/Base";
 import { ArticleCard } from "../components/2_Big/ArticleCard";
 import { Footer } from "../components/2_Big/Navigation/Footer";
 import { Navbar } from "../components/2_Big/Navigation/Navbar";
+import { NavbarWhite } from "../components/2_Big/Navigation/NavbarWhite";
 import { PopularArticles } from "../components/3_Pages/0_Home/1_PopularArticles";
 
 let client = require("contentful").createClient({
@@ -11,10 +12,10 @@ let client = require("contentful").createClient({
 });
 
 export async function getStaticProps() {
-  let data = await client.getEntries({
+  let hverdagsmat = await client.getEntries({
     content_type: "hverdagsmat",
   });
-  if (!data) {
+  if (!hverdagsmat) {
     return {
       redirect: {
         destination: "/",
@@ -24,23 +25,29 @@ export async function getStaticProps() {
   } else {
     return {
       props: {
-        blog: data.items,
+        hverdagsmat: hverdagsmat.items,
       },
       revalidate: 60,
     };
   }
 }
 
-export default function hverdagsmat({ blog }) {
+export default function hverdagsmat({ hverdagsmat }) {
   return (
     <>
-      <Navbar />
-      <div style={{ background: "#F5C6D7" }}>
+      <NavbarWhite />
+      <div
+        className="min-h-100 flex flex-col justify-between"
+        style={{ background: "#F5C6D7" }}
+      >
         <Layout>
-          <PopularArticles blog={blog} sectionHeading="Hverdagsmat" />
+          <PopularArticles
+            hverdagsmat={hverdagsmat}
+            sectionHeading="Hverdagsmat"
+          />
         </Layout>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

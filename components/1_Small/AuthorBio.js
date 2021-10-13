@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FormatterDato } from "./FormatterDato";
 
 const loader = ({ src, width }) => {
-  return `https://images.ctfassets.net/gz5doxqqp280/${src}?w=${width}`;
+  return `https://images.ctfassets.net/gz5doxqqp280/${src}?w=64`;
 };
 
 export const AuthorBio = ({

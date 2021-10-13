@@ -8,10 +8,10 @@ import {
   Section160,
 } from "../../1_Small/Base";
 const loader = ({ src, width }) => {
-  return `https://images.ctfassets.net/gz5doxqqp280/${src}?w=${width}`;
+  return `https://images.ctfassets.net/gz5doxqqp280/${src}?w=750`;
 };
 
-export const BlogHero = ({ heading, blog }) => {
+export const BlogHero = ({ blog }) => {
   return (
     <>
       <h1 className="mb-32 ">{blog.overskrift}</h1>

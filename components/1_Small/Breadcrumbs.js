@@ -16,7 +16,7 @@ const chevron = (
     <path
       d="M2.11775 23.2548L24.7452 45.8822L47.3726 23.2548"
       stroke="#B9455C"
-      stroke-width="6"
+      strokeWidth="6"
     />
   </svg>
 );
@@ -57,10 +57,19 @@ export const Breadcrumbs = ({ kategori }) => {
     return null;
   }
 
+  let categoryHref = "";
+  if (kategori == "Bærekraftig mat") {
+    categoryHref = "baerekraftig-mat";
+  } else if (kategori == "Hverdagsmat") {
+    categoryHref = "hverdagsmat";
+  } else {
+    categoryHref = "mat-for-barn";
+  }
+
   return (
     <nav aria-label="breadcrumbs">
       <div className="mr-12 hover:text-ctaVar hover:underline focus:text-ctaVar focus:underline flex mb-16">
-        <Link href="/">
+        <Link href={`/${categoryHref}`}>
           <a className="flex text-red font-bold mr-8">
             Gå tilbake til {kategori}
           </a>

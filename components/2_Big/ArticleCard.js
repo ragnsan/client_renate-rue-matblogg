@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const loader = ({ src }) => {
-  return `https://images.ctfassets.net/gz5doxqqp280/${src}`;
+  return `https://images.ctfassets.net/gz5doxqqp280/${src}?w=750`;
 };
 
 export const ArticleCard = ({
@@ -12,9 +12,10 @@ export const ArticleCard = ({
   aricleHref,
   imgSrc,
   imgAlt,
+  id,
 }) => {
   return (
-    <article className="hover cursor-pointer mb-32 lg:mb-56 group hover">
+    <article className="hover cursor-pointer mb-32 lg:mb-56 group" id={id}>
       <Link href={aricleHref}>
         <a>
           <div className="shadow-shadow rounded-rund relative h-240">
@@ -25,15 +26,15 @@ export const ArticleCard = ({
               layout="fill"
               className="object-cover rounded-rund"
             />
-            <div className="flex justify-end mr-16 pt-16">
-              <Box c="bg-white relative text-center font-semibold w-120">
-                <p className="text-body_small text-neutral_700 hover:no-underline">
+            <div className="flex justify-end mr-16 pt-16 ">
+              <Box c="bg-white relative text-center font-semibold ">
+                <p className="text-body_small text-neutral_700 px-24 ">
                   {articleCategory}
                 </p>
               </Box>
             </div>
           </div>
-          <h3 className="mt-24 text-neutral_900 group-hover:underline group-focus:underline">
+          <h3 className="mt-24 text-neutral_900 group-hover:underline group-focus:underline ">
             {articleTitle}
           </h3>
         </a>

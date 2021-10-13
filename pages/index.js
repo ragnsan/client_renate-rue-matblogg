@@ -26,13 +26,16 @@ let client = require("contentful").createClient({
 // }
 
 export async function getStaticProps({ params }) {
-  let data = await client.getEntries({
+  let brekraftigMat = await client.getEntries({
     content_type: "brekraftigMat",
-    // content_type: "hverdagsmat",
-    // content_type: "matForBarn",
-    // "fields.slug": params.slug,
   });
-  if (!data) {
+  let hverdagsmat = await client.getEntries({
+    content_type: "hverdagsmat",
+  });
+  let matForBarn = await client.getEntries({
+    content_type: "matForBarn",
+  });
+  if (!brekraftigMat || !hverdagsmat || !matForBarn) {
     return {
       redirect: {
         destination: "/",
@@ -42,14 +45,16 @@ export async function getStaticProps({ params }) {
   } else {
     return {
       props: {
-        blog: data.items,
+        brekraftigMat: brekraftigMat.items,
+        hverdagsmat: hverdagsmat.items,
+        matForBarn: matForBarn.items,
       },
       revalidate: 60,
     };
   }
 }
 
-export default function Home({ blog }) {
+export default function Home({ brekraftigMat, matForBarn, hverdagsmat }) {
   return (
     <>
       <NextSeo
@@ -76,8 +81,13 @@ export default function Home({ blog }) {
       <Navbar />
       <HomeHero />
       <Layout>
-        <PopularArticles blog={blog} sectionHeading="Populære artikler" />
-        <ArticleCategories blog={blog} />
+        <PopularArticles
+          brekraftigMat={brekraftigMat}
+          hverdagsmat={hverdagsmat}
+          matForBarn={matForBarn}
+          sectionHeading="Populære artikler"
+        />
+        <ArticleCategories />
       </Layout>
       <Footer />
     </>

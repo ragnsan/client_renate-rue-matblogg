@@ -3,6 +3,7 @@ import { Layout } from "../components/1_Small/Base";
 import { ArticleCard } from "../components/2_Big/ArticleCard";
 import { Footer } from "../components/2_Big/Navigation/Footer";
 import { Navbar } from "../components/2_Big/Navigation/Navbar";
+import { NavbarWhite } from "../components/2_Big/Navigation/NavbarWhite";
 import { PopularArticles } from "../components/3_Pages/0_Home/1_PopularArticles";
 
 let client = require("contentful").createClient({
@@ -11,10 +12,10 @@ let client = require("contentful").createClient({
 });
 
 export async function getStaticProps() {
-  let data = await client.getEntries({
+  let brekraftigMat = await client.getEntries({
     content_type: "brekraftigMat",
   });
-  if (!data) {
+  if (!brekraftigMat) {
     return {
       redirect: {
         destination: "/",
@@ -24,23 +25,29 @@ export async function getStaticProps() {
   } else {
     return {
       props: {
-        blog: data.items,
+        brekraftigMat: brekraftigMat.items,
       },
       revalidate: 60,
     };
   }
 }
 
-export default function baerekraftigMat({ blog }) {
+export default function baerekraftigMat({ brekraftigMat }) {
   return (
     <section className="min-h-100">
-      <Navbar />
-      <div className="" style={{ background: "#C6EBC9" }}>
+      <NavbarWhite />
+      <div
+        className="min-h-100 flex flex-col justify-between"
+        style={{ background: "#C6EBC9" }}
+      >
         <Layout>
-          <PopularArticles blog={blog} sectionHeading="Bærekraftig mat" />
+          <PopularArticles
+            brekraftigMat={brekraftigMat}
+            sectionHeading="Bærekraftig mat"
+          />
         </Layout>
+        <Footer />
       </div>
-      <Footer />
     </section>
   );
 }

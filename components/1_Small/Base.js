@@ -1,3 +1,6 @@
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 // TODO: Add the path for the cloudinary account for this project
@@ -21,6 +24,21 @@ export const Bilde = ({ src, alt, w, h, c, layout, of, op, id }) => {
   );
 };
 
+//
+// ! Styling for selected page in navbar
+//
+
+export const SelectedPageLink = ({ href, children }) => {
+  const router = useRouter();
+
+  let className = children.props.className || "";
+  if (router.pathname === href) {
+    className = `${className} font-bold pb-0 `;
+  }
+  // border-b-2 border-aksent
+
+  return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
+};
 // !
 // ! Containers and sections
 // !

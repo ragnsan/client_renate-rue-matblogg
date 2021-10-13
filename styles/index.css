@@ -83,8 +83,8 @@ body {
     @apply text-body_regular;
   }
   a {
-    @apply hover:underline;
-    @apply focus:underline;
+    /* @apply hover:underline; */
+    /* @apply focus:underline; */
   }
 
   /* *Flexbox utilities */
@@ -144,7 +144,7 @@ body {
 .noUnderline:focus,
 .button:hover,
 .button:focus {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* * Rotate an object, image, etc. */
@@ -156,4 +156,17 @@ body {
 }
 .circle {
   border-radius: 50%;
+}
+.hamburgerTransition {
+  transition: background-color 5s ease-in 0.3s;
+}
+
+.navBorderBot {
+  /* background-color: #333; */
+  /* margin-bottom: 24px; */
+  border-radius: 1px;
+  border-bottom: 2px solid #25777e;
+}
+.noUnderline:hover {
+  text-decoration: none;
 }

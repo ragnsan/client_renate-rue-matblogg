@@ -3,6 +3,7 @@ import { Layout } from "../components/1_Small/Base";
 import { ArticleCard } from "../components/2_Big/ArticleCard";
 import { Footer } from "../components/2_Big/Navigation/Footer";
 import { Navbar } from "../components/2_Big/Navigation/Navbar";
+import { NavbarWhite } from "../components/2_Big/Navigation/NavbarWhite";
 import { PopularArticles } from "../components/3_Pages/0_Home/1_PopularArticles";
 
 let client = require("contentful").createClient({
@@ -11,10 +12,10 @@ let client = require("contentful").createClient({
 });
 
 export async function getStaticProps() {
-  let data = await client.getEntries({
+  let matForBarn = await client.getEntries({
     content_type: "matForBarn",
   });
-  if (!data) {
+  if (!matForBarn) {
     return {
       redirect: {
         destination: "/",
@@ -24,23 +25,29 @@ export async function getStaticProps() {
   } else {
     return {
       props: {
-        blog: data.items,
+        matForBarn: matForBarn.items,
       },
       revalidate: 60,
     };
   }
 }
 
-export default function matForBarn({ blog }) {
+export default function matForBarn({ matForBarn }) {
   return (
     <>
-      <Navbar />
-      <div style={{ background: "#A6EDF0" }}>
+      <NavbarWhite />
+      <div
+        style={{ background: "#A6EDF0" }}
+        className="min-h-100 flex flex-col justify-between"
+      >
         <Layout>
-          <PopularArticles blog={blog} sectionHeading="Mat for barn" />
+          <PopularArticles
+            matForBarn={matForBarn}
+            sectionHeading="Mat for barn"
+          />
         </Layout>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
