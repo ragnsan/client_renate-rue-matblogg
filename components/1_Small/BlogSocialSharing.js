@@ -12,7 +12,7 @@ export const BlogSocialSharing = ({ category, blog }) => {
   return (
     <div className="flex flex-col md:flex-row mb-56">
       <FacebookShareButton
-        url={`https://renaterue.no/${category}/${blog.slug}`}
+      // url={`https://renaterue.no/${category}/${blog.slug}`}
       >
         <div className="py-16 px-24 flex bg-white rounded-rund items-center mr-24 mb-24 md:mb-0 w-100 md:w-auto justify-center cursor-pointer shadow-shadow hover">
           <a className="mr-16 font-semibold text-neutral_700 noUnderline ">

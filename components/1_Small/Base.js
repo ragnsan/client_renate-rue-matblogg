@@ -193,12 +193,8 @@ export const TwoFourThree = ({ c, children, id }) => {
   );
 };
 
-export const FourFourFour = ({ c, children, id }) => {
-  return (
-    <div key={id} className={`${c} col-span-4`}>
-      {children}
-    </div>
-  );
+export const FourFourFour = ({ c, children }) => {
+  return <div className={`${c} col-span-4`}>{children}</div>;
 };
 
 export const FourFourFive = ({ c, children, id }) => {
