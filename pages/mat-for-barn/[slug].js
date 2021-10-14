@@ -127,7 +127,7 @@ export default function blog({ blog }) {
               <Breadcrumbs kategori="Mat for barn" />
               <BlogHero heading={blog.overskrift} blog={blog} />
               {documentToReactComponents(blog.innhold, options)}
-              <BlogSocialSharing blog={blog} category="matForBarn" />
+              {/* <BlogSocialSharing blog={blog} category="matForBarn" /> */}
               <BlogReferences blog={blog} />
             </FourEightSix>
           </Grid>
