@@ -43,16 +43,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/hverdagsmat/[slug].js"
-    ],
-    "/mat-for-barn": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/mat-for-barn.js"
-    ],
-    "/om-renate": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/om-renate.js"
     ]
   },
   "ampFirstPages": []

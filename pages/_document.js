@@ -27,6 +27,34 @@ class MyDocument extends Document {
                 });
               `,
           }} */}
+          <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+            href="/fonts/open-sans-v26-latin-800.woff2"
+          />
+          <link
+            rel="preload"
+            as="font"
+            type="font/woff"
+            crossOrigin="anonymous"
+            href="/fonts/open-sans-v26-latin-800.woff"
+          />
+          <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+            href="/fonts/open-sans-v26-latin-500.woff2"
+          />
+          <link
+            rel="preload"
+            as="font"
+            type="font/woff"
+            crossOrigin="anonymous"
+            href="/fonts/open-sans-v26-latin-500.woff"
+          />
         </Head>
         <body>
           <Main />

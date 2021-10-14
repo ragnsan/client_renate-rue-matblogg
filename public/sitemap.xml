@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      
+	<url>
+		<loc>https://renaterue.no/baerekraftig-mat/[slug]</loc>
+		<lastmod>2021-10-14</lastmod>
+	</url>
+
+	<url>
+		<loc>https://renaterue.no/baerekraftig-mat</loc>
+		<lastmod>2021-10-14</lastmod>
+	</url>
+
+	<url>
+		<loc>https://renaterue.no/hverdagsmat/[slug]</loc>
+		<lastmod>2021-10-14</lastmod>
+	</url>
+
+	<url>
+		<loc>https://renaterue.no/hverdagsmat</loc>
+		<lastmod>2021-10-14</lastmod>
+	</url>
+
+	<url>
+		<loc>https://renaterue.no/mat-for-barn/[slug]</loc>
+		<lastmod>2021-10-14</lastmod>
+	</url>
+
+	<url>
+		<loc>https://renaterue.no/mat-for-barn</loc>
+		<lastmod>2021-10-14</lastmod>
+	</url>
+
+	<url>
+		<loc>https://renaterue.no/om-renate</loc>
+		<lastmod>2021-10-14</lastmod>
+	</url>
+</urlset>

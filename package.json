@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o _static",
+    "build": "next build",
     "start": "next start",
-    "generate:sitemap": "node ./scripts/generate-sitemap.js"
+    "generate:sitemap": "node ./scripts/generate-sitemap.js",
+    "generate:sitemap2": "node ./scripts/contentful-sitemap.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.4.0",
+    "contentful-sitemap": "^1.0.20",
     "hamburger-react": "^2.4.1",
     "next": "^11.1.2",
     "next-seo": "^4.24.0",
