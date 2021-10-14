@@ -10,9 +10,8 @@ export const PopularArticles = ({
   const MapBrekraftigMat = () => {
     return brekraftigMat.map((brekraftigMat) => {
       return (
-        <FourFourFour c="">
+        <FourFourFour c="" id={brekraftigMat.sys.id}>
           <ArticleCard
-            id={brekraftigMat.fields.slug}
             aricleHref={`baerekraftig-mat/${brekraftigMat.fields.slug}`}
             articleTitle={brekraftigMat.fields.overskrift}
             articleCategory={"Bærekraftig mat"}
@@ -26,8 +25,9 @@ export const PopularArticles = ({
   const MapHverdagsmat = () => {
     return hverdagsmat.map((hverdagsmat) => {
       return (
-        <FourFourFour c="" id={hverdagsmat.sys.id}>
+        <FourFourFour c="">
           <ArticleCard
+            key={hverdagsmat.sys.id}
             aricleHref={`hverdagsmat/${hverdagsmat.fields.slug}`}
             articleTitle={hverdagsmat.fields.overskrift}
             articleCategory={"Hverdagsmat"}

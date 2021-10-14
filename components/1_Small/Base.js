@@ -37,7 +37,9 @@ export const SelectedPageLink = ({ href, children }) => {
   }
   // border-b-2 border-aksent
 
-  return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
+  return (
+    <Link href={`${href}`}>{React.cloneElement(children, { className })}</Link>
+  );
 };
 // !
 // ! Containers and sections

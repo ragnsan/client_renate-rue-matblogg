@@ -7,7 +7,7 @@ export const ArticleCategories = () => {
       <h2 className="mb-56 text-h2 lg:text-h1">Les etter kategori</h2>
       <Grid>
         <FourFourFour className="group">
-          <Link href="baerekraftig-mat" className>
+          <Link href="/baerekraftig-mat" className>
             <a
               style={{ background: "#C6EBC9" }}
               className={` py-16 flex justify-center items-center rounded-rund shadow-shadow font-semibold hover noUnderline`}
@@ -20,7 +20,7 @@ export const ArticleCategories = () => {
           </Link>
         </FourFourFour>
         <FourFourFour className="group">
-          <Link href="hverdagsmat" className>
+          <Link href="/hverdagsmat" className>
             <a
               style={{ background: "#F5C6D7" }}
               className={` py-16 flex justify-center items-center rounded-rund shadow-shadow font-semibold hover noUnderline`}
@@ -33,7 +33,7 @@ export const ArticleCategories = () => {
           </Link>
         </FourFourFour>
         <FourFourFour className="group">
-          <Link href="mat-for-barn" className>
+          <Link href="/mat-for-barn" className>
             <a
               style={{ background: "#A6EDF0" }}
               className={` py-16 flex justify-center items-center rounded-rund shadow-shadow font-semibold hover noUnderline`}

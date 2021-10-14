@@ -33,16 +33,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/baerekraftig-mat.js"
-    ],
-    "/hverdagsmat": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/hverdagsmat.js"
-    ],
-    "/hverdagsmat/[slug]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/hverdagsmat/[slug].js"
     ]
   },
   "ampFirstPages": []

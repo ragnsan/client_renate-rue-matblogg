@@ -12,11 +12,11 @@ export const ArticleCard = ({
   aricleHref,
   imgSrc,
   imgAlt,
-  id,
+  key,
 }) => {
   return (
-    <article className="hover cursor-pointer mb-32 lg:mb-56 group" id={id}>
-      <Link href={aricleHref}>
+    <article className="hover cursor-pointer mb-32 lg:mb-56 group" key={key}>
+      <Link href={`/${aricleHref}`}>
         <a>
           <div className="shadow-shadow rounded-rund relative h-240">
             <Image

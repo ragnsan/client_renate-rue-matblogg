@@ -53,15 +53,15 @@ export const Footer = () => {
               Kategorier
             </h2>
             <div className="flex flex-col">
-              <SelectedPageLink href="baerekraftig-mat">
+              <SelectedPageLink href="/baerekraftig-mat">
                 <a className="underline text-neutral_700 mb-8">
                   Bærekraftig mat
                 </a>
               </SelectedPageLink>
-              <SelectedPageLink href="hverdagsmat">
+              <SelectedPageLink href="/hverdagsmat">
                 <a className="underline text-neutral_700 mb-8">Hverdagsmat</a>
               </SelectedPageLink>
-              <SelectedPageLink href="mat-for-barn">
+              <SelectedPageLink href="/mat-for-barn">
                 <a className="underline text-neutral_700 mb-8">Mat for barn</a>
               </SelectedPageLink>
             </div>
